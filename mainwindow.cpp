@@ -7,14 +7,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //ui->widget->setHeightPercent(ui->SliderHeight->value());
-    //ui->widget->setDiameterPercent(ui->SliderDiameter->value());
+
     ui->widget->setApproximationPercent(ui->SliderApproximation->value());
     ui->widget->setLightPercent(ui->SliderLight->value());
-
-    //timer = new QTimer(this);
-    //connect(timer, SIGNAL(timeout()), this, SLOT(timerEvent()));
-    //timerStatus = false;
 }
 
 MainWindow::~MainWindow()
@@ -34,13 +29,8 @@ void MainWindow::on_SliderLight_sliderMoved(int position)
 
 void MainWindow::on_isPolyFill_stateChanged(int arg1)
 {
-    //qDebug() << arg1;
      ui->widget->setPolyFillState(arg1 != 0);
 }
-
-/*void MainWindow::timerEvent() {
-    ui->widget->animationRealize();
-}*/
 
 void MainWindow::on_Apply_clicked()
 {
